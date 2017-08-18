@@ -1,9 +1,8 @@
 ﻿namespace TestInjectNlog.Logger
 {
-	public interface ILogger
+	public interface ILoggerService
 	{
 		string Name { get; }
 		void Debug(string message);
-
 	}
 }

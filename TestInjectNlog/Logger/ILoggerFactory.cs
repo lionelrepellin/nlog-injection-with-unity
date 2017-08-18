@@ -2,6 +2,6 @@
 {
 	public interface ILoggerFactory
 	{
-		ILogger Create<T>() where T : class;
+		ILoggerService Create<T>() where T : class;
 	}
 }

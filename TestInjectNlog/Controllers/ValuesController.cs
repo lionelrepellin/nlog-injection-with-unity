@@ -10,18 +10,17 @@ namespace TestInjectNlog.Controllers
 {
 	public class ValuesController : ApiController
 	{
-		private readonly ILoggerFactory _loggerFactory;
+		private readonly ILoggerService _loggerService;
 
 		public ValuesController(ILoggerFactory loggerFactory)
 		{
-			_loggerFactory = loggerFactory;
+			_loggerService = loggerFactory.Create<ValuesController>();
 		}
 
 		// GET api/values
 		public IEnumerable<string> Get()
 		{
-			var logger = _loggerFactory.Create<ValuesController>();
-			logger.Debug("Message de l'ApiController");
+			_loggerService.Debug("Message de l'ApiController");
 
 			return new string[] { "value1", "value2" };
 		}

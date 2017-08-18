@@ -9,19 +9,18 @@ namespace TestInjectNlog.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILoggerFactory _loggerFactory;
+		private readonly ILoggerService _loggerService;
 
 		public HomeController(ILoggerFactory loggerFactory)
 		{
-			_loggerFactory = loggerFactory;
+			_loggerService = loggerFactory.Create<HomeController>();
 		}
 
 		public ActionResult Index()
 		{
 			ViewBag.Title = "Home Page";
 
-			var logger = _loggerFactory.Create<HomeController>();
-			logger.Debug("Message du Controller MVC");
+			_loggerService.Debug("Message du Controller MVC");
 
 			return View();
 		}

@@ -6,16 +6,17 @@ using System.Web;
 
 namespace TestInjectNlog.Logger
 {
-	public class LoggerService : ILogger
+	public class LoggerService : ILoggerService
 	{
 		private readonly NLog.Logger _logger;
+
 		public LoggerService(Type type)
 		{
 			if (type == null)
-				throw new ArgumentNullException("type");
-			_logger = LogManager.GetCurrentClassLogger();
+				throw new ArgumentNullException(nameof(type));
+			_logger = LogManager.GetLogger(type.FullName);
 		}
-
+		
 		public string Name
 		{
 			get { return _logger.Name; }
