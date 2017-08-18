@@ -2,21 +2,20 @@ using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using TestInjectNlog.Logger;
-using NLog;
 
 namespace TestInjectNlog.App_Start
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
     /// </summary>
-    public static class UnityConfig
+    public class UnityConfig
     {
         #region Unity Container
         private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
         {
-            var unityContainer = new UnityContainer();
-            RegisterTypes(unityContainer);
-            return unityContainer;
+            var container = new UnityContainer();
+            RegisterTypes(container);
+            return container;
         });
 
         /// <summary>
@@ -39,16 +38,6 @@ namespace TestInjectNlog.App_Start
 
 			// TODO: Register your types here
 			// container.RegisterType<IProductRepository, ProductRepository>();
-
-			//ILogger logger = new InjectionFactory(x => LogManager.GetLogger(typeof(this))));
-			//7:             .Register<MyClassWithLoggerDependency>()
-
-			//container.RegisterType<ILogger>(new InjectionFactory(x => LogManager.GetLogger("pouet")));
-
-			//var x = typeof(this);
-
-							//.Register<MyClassWithLoggerDependency>();
-
 			container.RegisterType<ILoggerService, LoggerService>();
         }
     }
