@@ -16,7 +16,7 @@ namespace TestInjectNlog.Logger
 				throw new ArgumentNullException(nameof(type));
 			_logger = LogManager.GetLogger(type.FullName);
 		}
-		
+
 		public string Name
 		{
 			get { return _logger.Name; }
@@ -25,6 +25,11 @@ namespace TestInjectNlog.Logger
 		public void Debug(string message)
 		{
 			_logger.Debug(message);
+		}
+
+		public void Error(Exception exception)
+		{
+			_logger.Error(exception);
 		}
 	}
 }
