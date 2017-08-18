@@ -4,14 +4,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TestInjectNlog.Logger;
 
 namespace TestInjectNlog.Controllers
 {
 	public class ValuesController : ApiController
 	{
+		private readonly ILoggerService _loggerService;
+
+		public ValuesController(ILoggerService loggerService)
+		{
+			_loggerService = loggerService;
+		}
+
 		// GET api/values
 		public IEnumerable<string> Get()
 		{
+			_loggerService.Debug("pouet");
+
 			return new string[] { "value1", "value2" };
 		}
 
