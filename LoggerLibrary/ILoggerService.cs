@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestInjectNlog.Logger
+namespace LoggerLibrary
 {
 	public interface ILoggerService
 	{

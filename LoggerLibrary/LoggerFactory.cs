@@ -1,4 +1,4 @@
-﻿namespace TestInjectNlog.Logger
+﻿namespace LoggerLibrary
 {
 	public class LoggerFactory : ILoggerFactory
 	{

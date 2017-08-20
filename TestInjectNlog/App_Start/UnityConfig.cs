@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
-using TestInjectNlog.Logger;
+using LoggerLibrary;
 
 namespace TestInjectNlog.App_Start
 {

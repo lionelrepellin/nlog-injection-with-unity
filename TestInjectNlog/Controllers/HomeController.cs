@@ -1,9 +1,9 @@
-﻿using System;
+﻿using LoggerLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TestInjectNlog.Logger;
 
 namespace TestInjectNlog.Controllers
 {
