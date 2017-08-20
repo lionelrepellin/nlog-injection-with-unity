@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace LoggerLibrary
 {
@@ -10,7 +9,7 @@ namespace LoggerLibrary
 	{
         public string Name => _logger.Name;
         
-        private readonly NLog.Logger _logger;
+        private readonly ILogger _logger;
 
 		public LoggerService(Type type)
 		{
