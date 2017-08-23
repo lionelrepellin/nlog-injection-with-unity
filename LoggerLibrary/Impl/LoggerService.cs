@@ -29,8 +29,8 @@ namespace LoggerLibrary
 
 		public void Error(Exception exception, string message) => _logger.Error(exception, message);
 
-		public void Warn(string message) => _logger.Warn(message);
+		public void Error(string message) => _logger.Error(message);
 
-		public void Warn(Exception exception, string message) => _logger.Warn(exception, message);
+		public void Warn(string message) => _logger.Warn(message);		
 	}
 }

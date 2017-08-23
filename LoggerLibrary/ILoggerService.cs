@@ -10,8 +10,8 @@ namespace LoggerLibrary
 		void Debug(string message);
 		void Trace(string message);
 		void Error(Exception exception);
+		void Error(string message);
 		void Error(Exception exception, string message);
-		void Warn(string message);
-		void Warn(Exception exception, string message);
+		void Warn(string message);		
 	}
 }

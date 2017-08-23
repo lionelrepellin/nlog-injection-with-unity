@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="ILoggerFactory.cs" />
     <Compile Include="ILoggerService.cs" />
-    <Compile Include="LoggerFactory.cs" />
-    <Compile Include="LoggerService.cs" />
+    <Compile Include="Impl\LoggerFactory.cs" />
+    <Compile Include="Impl\LoggerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
